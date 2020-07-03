@@ -6,18 +6,21 @@ class Solution{
     public static void main(String []argh){
         Scanner in = new Scanner(System.in);
         int t=in.nextInt();
-        
-        for(int i=0;i<t;i++){
-            int temp=0;
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int n = in.nextInt();
-            temp+= a;
-            for(int j=0;j<n;j++){
-                temp += ((Math.pow(2,j))*b);
-                System.out.print(temp+" ");
+        if(t<=500 && t>=0){
+            for(int i=0;i<t;i++){
+                int temp=0;
+                int a = in.nextInt();
+                int b = in.nextInt();
+                int n = in.nextInt();
+                if(a>=0 && a<=50 && b>=0 && b<=50 && n>=1 && n<=15){
+                    temp+= a;
+                    for(int j=0;j<n;j++){
+                        temp += ((Math.pow(2,j))*b);
+                        System.out.print(temp+" ");
+                    }
+                    System.out.println("");    
+                }  
             }
-            System.out.println("");      
         }
         in.close();
     }
